@@ -1,17 +1,14 @@
-# Food Delivery App
+# Module 2 (Customer & Cart) + Module 6 (Ratings & Reviews)
 
-Java-based Food Delivery Management System.
+Plain Java 17, no package lines (matches the team's style), no database.
 
-## Modules
-1. Restaurant and Menu Management
-2. Customer and Cart
-3. Order Management
-4. Delivery Partner Assignment
-5. Payments, Coupons and Refunds
-6. Ratings and Reviews
+Folders: Module2_Customer_Cart, Module6_Ratings, demo.
 
-## Technologies
-- Java
-- OOP
-- Git
-- GitHub
+Compile + run (PowerShell, from this folder):
+    javac -d out (Get-ChildItem -Recurse -Filter *.java).FullName
+    java -cp out Module2And6Demo
+
+Integration (teammates):
+- Module 1: `Restaurant implements CartRestaurant`, `MenuItem implements CartMenuItem`
+- Module 3: `Order implements RatableOrder`; call cartService.validateCheckout(...) before placing and cartService.onOrderPlaced(...) after
+- Module 5: call cartService.onPaymentFailed(customerId) when payment fails
